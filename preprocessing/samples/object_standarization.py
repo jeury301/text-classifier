@@ -1,5 +1,6 @@
 def look_up_words(input_text):
     """Replacing social media slangs with more standarized words.
+    
     :param input_text: Slanged social media text.
     :return: Standarized text.
     """

@@ -6,6 +6,7 @@ def stemming(word):
     from a word.
 
     We make use of the PorterStemmer from nltk.
+    
     :param word: Word to stem.
     :return: Stemmed word.
     """

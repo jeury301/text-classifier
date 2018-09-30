@@ -1,5 +1,6 @@
 def noise_removal_w_list(input_text):
     """Removing noise from text using a list of noise words.
+
     :param input_text: Noisy text.
     :return: Clean text.
     """
@@ -14,6 +15,7 @@ def noise_removal_w_list(input_text):
 
 def noise_removal_w_regex(input_text):
     """Removing noise from using using regular expression.
+    
     :param input_text: Noisy text.
     :return: Clean text.
     """
