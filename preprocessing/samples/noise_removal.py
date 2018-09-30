@@ -1,4 +1,4 @@
-def _noise_removal_w_list(input_text):
+def noise_removal_w_list(input_text):
     """Removing noise from text using a list of noise words.
     :param input_text: Noisy text.
     :return: Clean text.
@@ -12,7 +12,7 @@ def _noise_removal_w_list(input_text):
     # building noise-free text
     return " ".join(noise_free_words)
 
-def _noise_removal_w_regex(input_text):
+def noise_removal_w_regex(input_text):
     """Removing noise from using using regular expression.
     :param input_text: Noisy text.
     :return: Clean text.
@@ -34,5 +34,5 @@ def _noise_removal_w_regex(input_text):
 if __name__ == '__main__':
     while True:
         text = input("> ")
-        print("noise-removal-with-list", _noise_removal_w_list(text))
-        print("noise-remove-with-regex", _noise_removal_w_regex(text))
+        print("noise-removal-with-list", noise_removal_w_list(text))
+        print("noise-remove-with-regex", noise_removal_w_regex(text))
