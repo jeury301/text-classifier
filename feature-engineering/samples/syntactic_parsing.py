@@ -3,8 +3,8 @@ from nltk import word_tokenize, pos_tag
 def speech_tag(input_text):
     """Defining the usage and the function of each word in the sentence.
 
-    Using nltk's 'pos_tag' to generate the spech_tagging for a given input text.
-    
+    Using nltk's 'pos_tag' to generate the speech tagging for a given input text.
+
     :param input_text: Original input.
     :return: List of tags for each word in the input sentence.
     """
