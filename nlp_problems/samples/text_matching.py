@@ -1,3 +1,16 @@
+import fuzzy
+
+def phonetic_matching(s1, s2):
+    """Computing the phonetic sound of 2 strings and using LD to compute its
+    similarity.
+
+    :param s1: First string.
+    :param s2: A second string.
+    :returns: The LD between the 2 string phonetic representations.
+    """
+    soundex = fuzzy.Soundex(4)
+    return levenshtein_distance(soundex(s1),soundex(s2))
+
 def levenshtein_distance(s1, s2):
     """Computing the Levenshtein Distance between two strings.
 
@@ -25,4 +38,8 @@ def levenshtein_distance(s1, s2):
     return distances[-1]
 
 if __name__ == '__main__':
-    print("LD",levenshtein_distance("machine learning", "deep learning"))
+    while True:
+        s1 = input("> Enter string 1: ")
+        s2 = input("> Enter string 2: ")
+
+        print("LD Phonetic Distance", phonetic_matching(s1, s2))
