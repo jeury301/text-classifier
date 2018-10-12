@@ -1,4 +1,31 @@
 import fuzzy
+import math
+from collections import Counter
+
+def get_cosine(vec1, vec2):
+    """Computing cosine similarities between 2 vectors.
+
+    Code from: https://www.analyticsvidhya.com/blog/2017/01/ultimate-guide-to-understand-implement-natural-language-processing-codes-in-python/
+
+    :param vec1: Vector representation of first string.
+    :param vec2: Vector representation of second string.
+    :returns: COSINE SIMILARITY
+    """
+    common = set(vec1.keys()) & set(vec2.keys())
+    numerator = sum([vec1[x] * vec2[x] for x in common])
+
+    sum1 = sum([vec1[x]**2 for x in vec1.keys()])
+    sum2 = sum([vec2[x]**2 for x in vec2.keys()])
+    denominator = math.sqrt(sum1) * math.sqrt(sum2)
+
+    if not denominator:
+        return 0.0
+    else:
+        return float(numerator) / denominator
+
+def text_to_vector(text):
+    words = text.split()
+    return Counter(words)
 
 def phonetic_matching(s1, s2):
     """Computing the phonetic sound of 2 strings and using LD to compute its
@@ -43,3 +70,4 @@ if __name__ == '__main__':
         s2 = input("> Enter string 2: ")
 
         print("LD Phonetic Distance", phonetic_matching(s1, s2))
+        print("Cosine similarity", get_cosine(text_to_vector(s1), text_to_vector(s2)))
