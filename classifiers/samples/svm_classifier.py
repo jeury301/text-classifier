@@ -26,8 +26,8 @@ def train_classifier(training_corpus):
     return model, train_vectors, train_labels
 
 if __name__ == '__main__':
-    trainig_data = load_data('../../datasets/even_odd.csv')
-    model, train_v, train_l = train_classifier(trainig_data)
+    training_data = load_data('../../datasets/even_odd.csv')
+    model, train_v, train_l = train_classifier(training_data)
     model.fit(train_v, train_l)
 
     while True:

@@ -13,8 +13,8 @@ def train_classifier(training_corpus):
     return NBC(training_corpus)
 
 if __name__ == '__main__':
-    trainig_data = load_data('../../datasets/even_odd.csv')
-    model = train_classifier(trainig_data)
+    training_data = load_data('../../datasets/even_odd.csv')
+    model = train_classifier(training_data)
 
     while True:
         text = input("> ")
